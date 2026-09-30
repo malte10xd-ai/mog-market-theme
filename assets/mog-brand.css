@@ -1,0 +1,73 @@
+/* Mog Market – Brand-Layer über Dawn.
+   Bewusst klein gehalten: Alles Design-Relevante läuft über die Theme-Einstellungen
+   (Farben, Schriften, Buttons). Diese Datei ergänzt nur, was Dawn nicht einstellen kann. */
+
+:root {
+  --mog-accent: #9fd5f5; /* Eisblau – nur als Fläche mit Graphit-Text verwenden */
+  --mog-graphite: #16181a;
+  --mog-line: #d9d4cb;
+  --mog-muted: #5a5f63;
+}
+
+/* Überschriften: kräftig, breit, Großbuchstaben */
+h1,
+h2,
+h3,
+.h0,
+.h1,
+.h2,
+.h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+h4,
+h5,
+.h4,
+.h5 {
+  letter-spacing: 0.01em;
+}
+
+/* Buttons: Großbuchstaben, klare Kanten */
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+/* Sichtbarer Fokus für Tastatur-Nutzer (Barrierefreiheit) */
+:focus-visible {
+  outline: 2px solid var(--mog-graphite);
+  outline-offset: 2px;
+}
+
+/* Feine Linien statt Schatten */
+.header-wrapper--border-bottom {
+  border-bottom: 1px solid var(--mog-line);
+}
+
+/* Produktseite: lange Produktnamen bleiben lesbar statt riesig */
+.product__title h1,
+.product__title .h1 {
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+
+@media screen and (min-width: 750px) {
+  .product__title h1,
+  .product__title .h1 {
+    font-size: 3.2rem;
+  }
+}
+
+/* Footer-Links: größere Tippflächen am Handy */
+.footer__content-bottom a,
+.footer__list-social a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}

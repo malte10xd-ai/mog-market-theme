@@ -6,16 +6,23 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Sauber vorbereitet. Diskret geliefert.",
             "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Markenprodukte für saubere Hygiene, schnell aus Deutschland zu dir.",
+            "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Zu den Produkten",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -24,17 +31,18 @@
       },
       "block_order": [
         "heading",
+        "text",
         "button"
       ],
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "bottom-left",
         "show_text_box": false,
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
@@ -42,7 +50,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Bestseller",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -53,23 +61,216 @@
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
         "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
+    "trust_bar": {
+      "type": "mog-trust-bar",
+      "blocks": {
+        "i1": {
+          "type": "item",
+          "settings": {
+            "icon": "package",
+            "title": "Diskreter Versand"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "CE-gekennzeichnete Markenprodukte"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Versand aus Deutschland"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Sichere Zahlung"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "show_borders": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "collection_tiles": {
+      "type": "mog-collection-tiles",
+      "blocks": {
+        "t1": {
+          "type": "tile",
+          "settings": {
+            "title": "Spritzen"
+          }
+        },
+        "t2": {
+          "type": "tile",
+          "settings": {
+            "title": "Hygiene"
+          }
+        },
+        "t3": {
+          "type": "tile",
+          "settings": {
+            "title": "Entsorgung"
+          }
+        },
+        "t4": {
+          "type": "tile",
+          "settings": {
+            "title": "Zubehör"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "title": "Kollektionen",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "tile_ratio": "4 / 5",
+        "columns_desktop": 4,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "brand_text": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Über Mog Market",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "small"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sauber. Klar. Verlässlich.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wir liefern Markenzubehör, das du ohne Umwege bekommst: klar erklärt, fair im Preis und diskret aus Deutschland verschickt. Kein Schnickschnack, nur das, was du brauchst.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "r1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wie läuft der Versand ab?",
+            "icon": "none",
+            "row_content": "<p>Wir versenden aus Deutschland in neutraler, diskreter Verpackung. Auf der Verpackung stehen keine Hinweise auf den Inhalt. Sobald deine Bestellung unterwegs ist, bekommst du eine E-Mail mit der Sendungsverfolgung.</p>",
+            "page": ""
+          }
+        },
+        "r2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wie ist meine Bestellung verpackt?",
+            "icon": "none",
+            "row_content": "<p>Alle Produkte kommen sauber und sicher verpackt bei dir an. Die Außenverpackung ist neutral und unauffällig, der Absender zeigt keinen Produktbezug.</p>",
+            "page": ""
+          }
+        },
+        "r3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kann ich Artikel zurückgeben?",
+            "icon": "none",
+            "row_content": "<p>Die Rückgabebedingungen findest du in unseren Richtlinien, die du im Footer verlinkt findest. Bei Fragen schreib uns einfach über das Kontaktformular.</p>",
+            "page": ""
+          }
+        },
+        "r4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Welche Zahlungsarten gibt es?",
+            "icon": "none",
+            "row_content": "<p>Du kannst bequem und sicher über die im Checkout angezeigten Zahlungsarten bezahlen. Deine Zahlungsdaten werden verschlüsselt übertragen.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Häufige Fragen",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "trust_bar",
+    "collection_tiles",
+    "featured_collection",
+    "brand_text",
+    "faq"
   ]
 }

@@ -1,0 +1,203 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .mog-trust {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .mog-trust {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_borders %} mog-trust--bordered{% endif %}">
+  <div class="mog-trust page-width">
+    <ul class="mog-trust__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="mog-trust__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            <span class="mog-trust__icon" aria-hidden="true">
+              {%- case block.settings.icon -%}
+                {%- when 'package' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>
+                {%- when 'shield' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M12 3 4 6v6c0 4.5 3.3 7.7 8 9 4.7-1.3 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+                {%- when 'truck' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M2 6h12v10H2zM14 9h4l4 3v4h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+                {%- when 'lock' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><rect x="5" y="10.5" width="14" height="10"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                {%- when 'check' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg>
+                {%- when 'heart' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M12 20.5 4 12.6a4.6 4.6 0 0 1 6.5-6.5L12 7.6l1.5-1.5a4.6 4.6 0 0 1 6.5 6.5z"/></svg>
+              {%- endcase -%}
+            </span>
+          {%- endif -%}
+          <span class="mog-trust__text">
+            {%- if block.settings.title != blank -%}
+              <span class="mog-trust__title">{{ block.settings.title | escape }}</span>
+            {%- endif -%}
+            {%- if block.settings.subtext != blank -%}
+              <span class="mog-trust__subtext">{{ block.settings.subtext | escape }}</span>
+            {%- endif -%}
+          </span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{%- stylesheet -%}
+  .mog-trust--bordered {
+    border-bottom: 1px solid #d9d4cb;
+  }
+
+  .mog-trust__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem 1.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mog-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mog-trust__icon {
+    flex: 0 0 auto;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .mog-trust__icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mog-trust__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .mog-trust__title {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .mog-trust__subtext {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    opacity: 0.75;
+  }
+
+  @media screen and (min-width: 990px) {
+    .mog-trust__list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    .mog-trust__title {
+      font-size: 1.3rem;
+    }
+  }
+{%- endstylesheet -%}
+
+{% schema %}
+{
+  "name": "Mog: Trust-Leiste",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Farbschema",
+      "default": "scheme-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_borders",
+      "label": "Trennlinie unten anzeigen",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Vorteil",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "none", "label": "Kein Icon" },
+            { "value": "package", "label": "Paket" },
+            { "value": "shield", "label": "Schild mit Haken" },
+            { "value": "truck", "label": "Lieferwagen" },
+            { "value": "lock", "label": "Schloss" },
+            { "value": "check", "label": "Haken im Kreis" },
+            { "value": "heart", "label": "Herz" }
+          ],
+          "default": "package"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Text",
+          "default": "Diskreter Versand"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Zusatztext (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mog: Trust-Leiste",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "package", "title": "Diskreter Versand" } },
+        { "type": "item", "settings": { "icon": "shield", "title": "CE-gekennzeichnete Markenprodukte" } },
+        { "type": "item", "settings": { "icon": "truck", "title": "Versand aus Deutschland" } },
+        { "type": "item", "settings": { "icon": "lock", "title": "Sichere Zahlung" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
