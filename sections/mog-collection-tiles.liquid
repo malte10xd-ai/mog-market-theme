@@ -8,6 +8,14 @@
     aspect-ratio: {{ section.settings.tile_ratio }};
   }
 
+  /* Handy: bleibt eine Kachel allein in der letzten Reihe, geht sie über die volle Breite */
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ section.id }} .mog-tiles__item:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      aspect-ratio: 2 / 1;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     #shopify-section-{{ section.id }} .mog-tiles-wrap {
       padding-top: {{ section.settings.padding_top }}px;
