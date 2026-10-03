@@ -45,9 +45,6 @@
             assign tile_title = collection.title
           endif
           assign tile_image = block.settings.image
-          if tile_image == blank and collection != blank
-            assign tile_image = collection.featured_image
-          endif
           assign tile_link = collection.url
           if block.settings.link != blank
             assign tile_link = block.settings.link
@@ -301,7 +298,7 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Bild (leer = Bild der Kollektion)"
+          "label": "Bild (leer = Platzhalter)"
         },
         {
           "type": "url",

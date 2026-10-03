@@ -126,19 +126,22 @@
         "t1": {
           "type": "tile",
           "settings": {
-            "title": "Spritzen"
+            "title": "Spritzen",
+            "collection": "spritzen"
           }
         },
         "t2": {
           "type": "tile",
           "settings": {
-            "title": "Hygiene"
+            "title": "Hygiene",
+            "collection": "hygiene"
           }
         },
         "t4": {
           "type": "tile",
           "settings": {
-            "title": "Zubehör"
+            "title": "Zubehör",
+            "collection": "zubehor"
           }
         }
       },
