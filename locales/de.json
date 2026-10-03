@@ -177,7 +177,7 @@
         "price_at_each_html": "bei {{ price }}/Stück"
       },
       "product_variants": "Produktvarianten",
-      "taxes_included": "Inkl. Steuern.",
+      "taxes_included": "Kein Ausweis von Umsatzsteuer gemäß § 19 UStG.",
       "duties_included": "Inkl. Zollgebühren.",
       "duties_and_taxes_included": "Inkl. Zollgebühren und Steuern."
     },
@@ -302,8 +302,8 @@
       "new_estimated_total": "Neuer geschätzter Gesamtbetrag",
       "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Inkl. Zollgebühren und Steuern. Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
       "duties_and_taxes_included_shipping_at_checkout_without_policy": "Inkl. Zollgebühren und Steuern. Rabatte und Versand werden beim Checkout berechnet.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "Inkl. Steuern. Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
-      "taxes_included_shipping_at_checkout_without_policy": "Inkl. Steuern. Rabatte und Versand werden beim Checkout berechnet.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Kein Ausweis von Umsatzsteuer gemäß § 19 UStG. Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
+      "taxes_included_shipping_at_checkout_without_policy": "Kein Ausweis von Umsatzsteuer gemäß § 19 UStG. Rabatte und Versand werden beim Checkout berechnet.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Inkl. Zollgebühren. Steuern, Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Inkl. Zollgebühren. Steuern, Rabatte und Versand werden beim Checkout berechnet.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Steuern, Rabatte und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet.",
