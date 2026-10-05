@@ -71,6 +71,15 @@
                   sizes: '(min-width: 990px) 25vw, 50vw',
                   alt: tile_image.alt
               }}
+            {%- elsif block.settings.theme_image != blank -%}
+              <img
+                class="mog-tiles__image"
+                src="{{ block.settings.theme_image | asset_url }}"
+                alt=""
+                width="1200"
+                height="1500"
+                loading="lazy"
+              >
             {%- else -%}
               <div class="mog-tiles__image mog-tiles__image--placeholder">
                 {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'placeholder-svg' }}
@@ -298,7 +307,13 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Bild (leer = Platzhalter)"
+          "label": "Bild (leer = mitgeliefertes Bild bzw. Platzhalter)"
+        },
+        {
+          "type": "text",
+          "id": "theme_image",
+          "label": "Mitgeliefertes Bild (Dateiname im Theme)",
+          "info": "Wird nur genutzt, wenn oben kein Bild gewählt ist. Z. B. mog-tile-spritzen.jpg"
         },
         {
           "type": "url",
