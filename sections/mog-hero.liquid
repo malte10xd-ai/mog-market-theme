@@ -1,0 +1,306 @@
+{%- liquid
+  assign overlay = section.settings.overlay_opacity | divided_by: 100.0
+  assign alt_text = section.settings.image_alt | default: section.settings.heading | escape
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .mog-hero {
+    --mog-hero-overlay: {{ overlay }};
+  }
+
+  #shopify-section-{{ section.id }} .mog-hero__media img {
+    object-position: {{ section.settings.focus_desktop }};
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .mog-hero__media img {
+      object-position: {{ section.settings.focus_mobile }};
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .mog-hero {
+      min-height: {{ section.settings.height_desktop }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="mog-hero color-{{ section.settings.color_scheme }}">
+  <div class="mog-hero__media">
+    <picture>
+      {%- if section.settings.image_mobile != blank -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="
+            {{ section.settings.image_mobile | image_url: width: 600 }} 600w,
+            {{ section.settings.image_mobile | image_url: width: 900 }} 900w,
+            {{ section.settings.image_mobile | image_url: width: 1200 }} 1200w
+          "
+          sizes="100vw"
+        >
+      {%- elsif section.settings.image_desktop == blank -%}
+        <source media="(max-width: 749px)" srcset="{{ 'mog-hero-mobile.jpg' | asset_url }}">
+      {%- endif -%}
+
+      {%- if section.settings.image_desktop != blank -%}
+        {{
+          section.settings.image_desktop
+          | image_url: width: 2400
+          | image_tag:
+            widths: '750, 1100, 1500, 1920, 2400',
+            sizes: '100vw',
+            alt: alt_text,
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+      {%- else -%}
+        <img
+          src="{{ 'mog-hero-desktop.jpg' | asset_url }}"
+          alt="{{ alt_text }}"
+          width="2400"
+          height="1600"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- endif -%}
+    </picture>
+  </div>
+
+  <div class="mog-hero__content page-width">
+    <div class="mog-hero__copy">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="mog-hero__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtext != blank -%}
+        <p class="mog-hero__subtext">{{ section.settings.subtext | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a
+          class="button mog-hero__button"
+          {% if section.settings.button_link != blank %}
+            href="{{ section.settings.button_link }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- stylesheet -%}
+  .mog-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: rgb(var(--color-background));
+  }
+
+  @media screen and (min-width: 750px) {
+    .mog-hero {
+      aspect-ratio: auto;
+    }
+  }
+
+  .mog-hero__media,
+  .mog-hero__media picture,
+  .mog-hero__media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mog-hero__media img {
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Abdunklung nur dort, wo der Text liegt: unten am Handy, links unten am Desktop */
+  .mog-hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(22, 24, 26, var(--mog-hero-overlay)) 0%,
+      rgba(22, 24, 26, calc(var(--mog-hero-overlay) * 0.6)) 35%,
+      rgba(22, 24, 26, 0) 65%
+    );
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .mog-hero__media::after {
+      background: linear-gradient(
+        to right,
+        rgba(22, 24, 26, var(--mog-hero-overlay)) 0%,
+        rgba(22, 24, 26, calc(var(--mog-hero-overlay) * 0.5)) 40%,
+        rgba(22, 24, 26, 0) 65%
+      );
+    }
+  }
+
+  .mog-hero__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 3.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .mog-hero__content {
+      padding-bottom: 5.6rem;
+    }
+  }
+
+  .mog-hero__copy {
+    max-width: 60rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mog-hero__heading {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: 3.6rem;
+    line-height: 1.02;
+    color: inherit;
+  }
+
+  @media screen and (min-width: 750px) {
+    .mog-hero__heading {
+      font-size: 5.6rem;
+    }
+  }
+
+  .mog-hero__subtext {
+    margin: 1.2rem 0 2.4rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  @media screen and (min-width: 750px) {
+    .mog-hero__subtext {
+      font-size: 1.7rem;
+    }
+  }
+{%- endstylesheet -%}
+
+{% schema %}
+{
+  "name": "Mog: Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Bilder"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Bild Desktop (Querformat, ca. 2400 × 1600 px)",
+      "info": "Leer = mitgeliefertes Mog-Market-Bild"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Bild Handy (Hochformat 4:5, ca. 1200 × 1500 px)",
+      "info": "Leer = Desktop-Bild wird zugeschnitten"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Bildbeschreibung (Alt-Text)",
+      "default": "Illustration: Paar blickt bei Sonnenuntergang über einen See"
+    },
+    {
+      "type": "select",
+      "id": "focus_desktop",
+      "label": "Bildausschnitt Desktop",
+      "options": [
+        { "value": "left center", "label": "Links" },
+        { "value": "center center", "label": "Mitte" },
+        { "value": "right center", "label": "Rechts" }
+      ],
+      "default": "right center"
+    },
+    {
+      "type": "select",
+      "id": "focus_mobile",
+      "label": "Bildausschnitt Handy",
+      "options": [
+        { "value": "left center", "label": "Links" },
+        { "value": "center center", "label": "Mitte" },
+        { "value": "right center", "label": "Rechts" }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 10,
+      "unit": "%",
+      "label": "Abdunklung hinter dem Text",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "min": 400,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "label": "Höhe Desktop",
+      "default": 640
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Sauber vorbereitet. Diskret geliefert."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Text darunter",
+      "default": "Markenprodukte für saubere Hygiene, schnell aus Deutschland zu dir."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button-Text",
+      "default": "Zu den Produkten"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button-Link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Farbschema (Text und Button)",
+      "default": "scheme-3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mog: Hero"
+    }
+  ]
+}
+{% endschema %}

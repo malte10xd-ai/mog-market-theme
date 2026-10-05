@@ -1,78 +1,18 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Sauber vorbereitet. Diskret geliefert.",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Markenprodukte für saubere Hygiene, schnell aus Deutschland zu dir.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Zu den Produkten",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+    "mog_hero": {
+      "type": "mog-hero",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-left",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Bestseller",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "outline",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "padding_top": 48,
-        "padding_bottom": 56
+        "image_alt": "Illustration: Paar blickt bei Sonnenuntergang über einen See",
+        "focus_desktop": "right center",
+        "focus_mobile": "center center",
+        "overlay_opacity": 60,
+        "height_desktop": 640,
+        "heading": "Sauber vorbereitet. Diskret geliefert.",
+        "subtext": "Markenprodukte für saubere Hygiene, schnell aus Deutschland zu dir.",
+        "button_label": "Zu den Produkten",
+        "button_link": "shopify://collections/all",
+        "color_scheme": "scheme-3"
       }
     },
     "trust_bar": {
@@ -120,6 +60,34 @@
         "padding_bottom": 24
       }
     },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bestseller",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
     "collection_tiles": {
       "type": "mog-collection-tiles",
       "blocks": {
@@ -127,21 +95,24 @@
           "type": "tile",
           "settings": {
             "title": "Spritzen",
-            "collection": "spritzen"
+            "collection": "spritzen",
+            "theme_image": "mog-tile-spritzen.jpg"
           }
         },
         "t2": {
           "type": "tile",
           "settings": {
             "title": "Hygiene",
-            "collection": "hygiene"
+            "collection": "hygiene",
+            "theme_image": "mog-tile-hygiene.jpg"
           }
         },
         "t4": {
           "type": "tile",
           "settings": {
             "title": "Zubehör",
-            "collection": "zubehor"
+            "collection": "zubehor",
+            "theme_image": "mog-tile-zubehor.jpg"
           }
         }
       },
@@ -262,7 +233,7 @@
     }
   },
   "order": [
-    "image_banner",
+    "mog_hero",
     "trust_bar",
     "featured_collection",
     "collection_tiles",
