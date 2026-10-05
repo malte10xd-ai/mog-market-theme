@@ -92,3 +92,42 @@ button.shopify-payment-button__button--unbranded {
 .product-grid .card-wrapper > .card > .quick-add {
   margin-top: auto;
 }
+
+/* Footer: alle Links in einer zentrierten Zeile, unterer Bereich ebenfalls mittig */
+.footer .footer__blocks-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 2.4rem;
+  margin: 0;
+}
+
+.footer .footer__blocks-wrapper > .footer-block {
+  width: auto;
+  max-width: none;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-block--menu .footer-block__details-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 2.4rem;
+  margin: 0;
+}
+
+.footer .footer-block--menu .footer-block__details-content li {
+  margin: 0;
+}
+
+.footer .footer__content-bottom-wrapper {
+  justify-content: center;
+}
+
+.footer .footer__column--info {
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}

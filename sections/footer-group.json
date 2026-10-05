@@ -8,14 +8,14 @@
         "footer-shop": {
           "type": "link_list",
           "settings": {
-            "heading": "Shop",
+            "heading": "",
             "menu": "main-menu"
           }
         },
         "footer-service": {
           "type": "link_list",
           "settings": {
-            "heading": "Service",
+            "heading": "",
             "menu": "footer"
           }
         }
