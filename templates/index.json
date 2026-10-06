@@ -8,8 +8,8 @@
         "focus_mobile": "center center",
         "overlay_opacity": 60,
         "height_desktop": 640,
-        "heading": "Sauber vorbereitet. Diskret geliefert.",
-        "subtext": "Markenprodukte für saubere Hygiene, schnell aus Deutschland zu dir.",
+        "heading": "Let's Mog.",
+        "subtext": "Markenzubehör, fair im Preis und diskret aus Deutschland verschickt.",
         "button_label": "Zu den Produkten",
         "button_link": "shopify://collections/all",
         "color_scheme": "scheme-3"
@@ -152,7 +152,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Wir liefern Markenzubehör, fair im Preis und diskret aus Deutschland verschickt. Let's Mog.</p>"
+            "text": "<p>Ausgewählte Markenprodukte, die du kennst und denen du vertraust. Neutral verpackt, schnell bei dir.</p>"
           }
         }
       },
