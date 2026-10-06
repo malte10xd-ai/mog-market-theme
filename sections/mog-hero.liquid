@@ -39,7 +39,7 @@
           sizes="100vw"
         >
       {%- elsif section.settings.image_desktop == blank -%}
-        <source media="(max-width: 749px)" srcset="{{ 'mog-hero-mobile.jpg' | asset_url }}">
+        <source media="(max-width: 749px)" srcset="{{ 'mog-hero-mobile.webp' | asset_url }}">
       {%- endif -%}
 
       {%- if section.settings.image_desktop != blank -%}
@@ -55,10 +55,10 @@
         }}
       {%- else -%}
         <img
-          src="{{ 'mog-hero-desktop.jpg' | asset_url }}"
+          src="{{ 'mog-hero-desktop.webp' | asset_url }}"
           alt="{{ alt_text }}"
-          width="1536"
-          height="1024"
+          width="2400"
+          height="1600"
           loading="eager"
           fetchpriority="high"
         >

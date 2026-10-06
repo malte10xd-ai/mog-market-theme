@@ -96,7 +96,7 @@
           "settings": {
             "title": "Spritzen",
             "collection": "spritzen",
-            "theme_image": "mog-tile-spritzen.jpg"
+            "theme_image": "mog-tile-spritzen.webp"
           }
         },
         "t2": {
@@ -104,7 +104,7 @@
           "settings": {
             "title": "Hygiene",
             "collection": "hygiene",
-            "theme_image": "mog-tile-hygiene.jpg"
+            "theme_image": "mog-tile-hygiene.webp"
           }
         },
         "t4": {
@@ -112,7 +112,7 @@
           "settings": {
             "title": "Zubehör",
             "collection": "zubehor",
-            "theme_image": "mog-tile-zubehor.jpg"
+            "theme_image": "mog-tile-zubehor.webp"
           }
         }
       },
