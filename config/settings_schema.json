@@ -1466,5 +1466,26 @@
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
       }
     ]
+  },
+  {
+    "name": "Mog: Rückgaben-Link",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Link im Footer zur Bestellübersicht im Kundenkonto. Voraussetzung: Unter Einstellungen → Kundenkonten sind die neuen Kundenkonten aktiv."
+      },
+      {
+        "type": "checkbox",
+        "id": "mog_returns_link_enable",
+        "label": "Link anzeigen",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "mog_returns_link_label",
+        "label": "Link-Text",
+        "default": "Rückgaben und Stornierungen"
+      }
+    ]
   }
 ]

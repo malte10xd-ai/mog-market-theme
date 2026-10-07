@@ -1,0 +1,20 @@
+{%- comment -%}
+  Mog Market: Link "Rückgaben und Stornierungen" im Footer.
+  Ziel: Bestellübersicht im Kundenkonto (routes.account_url; neue Kundenkonten starten auf "Bestellungen").
+  Einstellungen: Theme-Einstellungen -> "Mog: Rückgaben-Link".
+{%- endcomment -%}
+
+{%- if settings.mog_returns_link_enable and shop.customer_accounts_enabled -%}
+  <div class="footer-block grid__item footer-block--menu mog-returns-link">
+    <ul class="footer-block__details-content list-unstyled">
+      <li>
+        <a
+          href="{{ routes.account_url }}"
+          class="link link--text list-menu__item list-menu__item--link"
+        >
+          {{- settings.mog_returns_link_label | default: 'Rückgaben und Stornierungen' | escape -}}
+        </a>
+      </li>
+    </ul>
+  </div>
+{%- endif -%}
